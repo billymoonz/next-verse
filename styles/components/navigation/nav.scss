@@ -1,0 +1,187 @@
+.home-nav {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    nav {
+        position: relative;
+        background: transparent;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        ul {
+            display: none;
+        }
+
+        h1 {
+            position: absolute;
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+            color: var(--main);
+        }
+
+        button[type=submit] {
+            position: absolute;
+            left: 0;
+            color: var(--main);
+            font-size: 1.5rem;
+            transition: all 0.3s;
+
+            &:hover {
+                color: var(--main-darker);
+            }
+        }
+    }
+
+    &-links {
+        display: flex;
+        gap: 12px;
+        position: absolute;
+        right: 0;
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--main);
+            font-size: 1.3rem;
+            transition: all 0.3s;
+
+            &:hover {
+                color: var(--main-darker);
+            }
+        }
+
+        a {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 8px;
+            padding-left: 25px;
+            padding-right: 25px;
+            color: var(--primary);
+            border-radius: var(--radius);
+            font-weight: 500;
+            transition: all 0.3s;
+            display: none;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+    &-menu {
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        background: var(--background);
+        z-index: 100;
+        left: 0;
+        right: 0;
+        padding: 20px;
+
+        ul {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+
+            li {
+                display: block;
+                width: 100%;
+
+                a {
+                    padding: 5px;
+                    display: block;
+                    color: var(--primary);
+
+                    &:hover {
+                        color: var(--secondary);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        &-login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 12px;
+            width: 100%;
+            text-transform: uppercase;
+            color: var(--primary);
+            background: rgba(0, 0, 0, 0.1);
+            height: 40px;
+            border-radius: var(--radius);
+            transition: all 0.3s;
+
+            &:hover, &:focus {
+                background: rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .home-nav {
+        &-menu {
+            &-login {
+                display: none;
+            }
+            ul {
+                display: flex;
+                gap: 8px;
+                li {
+                    width: initial;
+                }
+            }
+        }
+
+        &-links {
+            a {
+                display: initial;
+            }
+        }
+    }
+}
+
+@media(min-width: 1024px) {
+    .home-nav {
+        &-menu {
+            display: none;
+        }
+
+        nav {
+            button[type=submit] {
+                display: none;
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                gap: 8px;
+
+                li {
+                    font-size: 0.8rem;
+                    color: var(--main);
+                    transition: all 0.3s;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1rem;
+
+                    &:hover {
+                        color: var(--primary-hover);
+                    }
+                }
+            }
+
+            h1 {
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+}

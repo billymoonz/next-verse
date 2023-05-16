@@ -1,0 +1,192 @@
+.home-splash {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    scroll-snap-align: start;
+    scroll-margin-top: 70px;
+    scroll-snap-stop: always;
+    
+    &-github {
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: var(--radius);
+        margin-bottom: 8px;
+        color: var(--primary);
+        background: rgba(0, 0, 0, 0.2);
+        transition: all 0.3s;
+        font-size: var(--paragraph);
+        &:hover, &:focus {
+            background: rgba(0, 0, 0, 0.3);
+        }
+    }
+    
+    h1 {
+        margin: 0;
+        font-weight: 800;
+        letter-spacing: -2px;
+        text-align: center;
+        font-size: var(--header);
+        line-height: 1.75rem;
+        transition: all 0.3s;
+        color: var(--primary);
+    }
+
+    p {
+        margin-top: 12px;
+        font-size: var(--paragraph);
+        color: var(--secondary);
+        text-align: center;
+        transition: all 0.3s;
+        max-width: 400px;
+        letter-spacing: -0.5px;
+        font-weight: 500;
+    }
+
+    &-links {
+        margin-top: 12px;
+        display: flex;
+
+        a {
+            font-size: 0.9rem;
+            padding: 8px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: var(--radius);
+
+            &:first-of-type {
+                background: var(--primary);
+                color: var(--background);
+                font-weight: 500;
+                transition: all 0.3s;
+
+                &:hover, &:focus {
+                    background: var(--primary-hover);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .home-splash {
+        h1 {
+            font-size: var(--lg-header);
+        }
+
+        p {
+            font-size: var(--lg-paragraph);
+            max-width: 500px;
+        }
+    }
+}
+
+@media(min-width: 1024px) {
+    .home-splash {
+        h1 {
+            font-size: var(--xl-header);
+            line-height: 2.2rem;
+        }
+
+        p {
+            max-width: 650px;
+        }
+
+        &-links {
+            a {
+                font-size: var(--lg-paragraph);
+            }
+        }
+    }
+}
+
+.home-splash-v2 {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+
+    h1 {
+        margin: 0;
+        font-weight: 800;
+        letter-spacing: -2px;
+        text-align: center;
+        font-size: var(--header);
+        line-height: 1.75rem;
+        transition: all 0.3s;
+        color: var(--primary);
+    }
+
+    p {
+        margin-top: 12px;
+        font-size: var(--paragraph);
+        color: var(--secondary);
+        text-align: center;
+        transition: all 0.3s;
+        max-width: 400px;
+        letter-spacing: -0.5px;
+        font-weight: 500;
+    }
+
+    &-links {
+        margin-top: 12px;
+        display: flex;
+
+        a {
+            font-size: 0.9rem;
+            padding: 8px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: var(--radius);
+
+            &:first-of-type {
+                background: var(--primary);
+                color: var(--background);
+                font-weight: 500;
+                transition: all 0.3s;
+
+                &:hover, &:focus {
+                    background: var(--primary-hover);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .home-splash-v2 {
+        h1 {
+            font-size: var(--lg-header);
+        }
+
+        p {
+            font-size: var(--lg-paragraph);
+            max-width: 500px;
+        }
+    }
+}
+
+@media(min-width: 1024px) {
+    .home-splash-v2 {
+        h1 {
+            font-size: var(--xl-header);
+            line-height: 2.2rem;
+        }
+
+        p {
+            max-width: 650px;
+        }
+
+        &-links {
+            a {
+                font-size: var(--lg-paragraph);
+            }
+        }
+    }
+}
