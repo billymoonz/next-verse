@@ -1,5 +1,5 @@
-### NextVerse
+# NextVerse
 
-# Roadmap
+### Roadmap
 - Landing page
 - Authentication
