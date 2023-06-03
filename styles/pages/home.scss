@@ -5,9 +5,6 @@
     justify-content: center;
     flex-direction: column;
     padding: 20px;
-    scroll-snap-align: start;
-    scroll-margin-top: 70px;
-    scroll-snap-stop: always;
     
     &-github {
         padding: 5px;
@@ -104,7 +101,6 @@
 }
 
 .home-splash-v2 {
-    scroll-snap-align: start;
     min-height: 100vh;
     display: flex;
     align-items: center;

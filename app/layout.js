@@ -1,6 +1,7 @@
 import '@/styles/globals.scss'
+import '@/styles/main.scss';
 
-import {ThemeProvider} from "@/hooks/theme";
+import { ThemeProvider } from "@/hooks/theme";
 
 export const metadata = {
     title: {
@@ -22,12 +23,12 @@ export const metadata = {
     creator: "Billy Mooney",
 }
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
     return (
         <html lang="en">
-        <ThemeProvider>
-            {children}
-        </ThemeProvider>
+            <ThemeProvider>
+                {children}
+            </ThemeProvider>
         </html>
     )
 }

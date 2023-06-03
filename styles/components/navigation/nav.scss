@@ -1,11 +1,16 @@
 .home-nav {
     padding-left: 20px;
     padding-right: 20px;
-
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     nav {
         position: relative;
         background: transparent;
         height: 70px;
+        width: 100%;
+        max-width: 980px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -56,14 +61,31 @@
             }
         }
 
-        a {
+        &-signin {
             background: rgba(0, 0, 0, 0.1);
             padding: 8px;
-            padding-left: 25px;
-            padding-right: 25px;
+            padding-left: 15px;
+            padding-right: 15px;
             color: var(--primary);
             border-radius: var(--radius);
             font-weight: 500;
+            transition: all 0.3s;
+            display: none;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        &-menu {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 8px;
+            padding-left: 15px;
+            padding-right: 15px;
+            color: var(--primary) !important;
+            border-radius: var(--radius);
+            font-weight: 500;
+            font-size: 1rem !important;
             transition: all 0.3s;
             display: none;
 
@@ -118,8 +140,79 @@
             border-radius: var(--radius);
             transition: all 0.3s;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 background: rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
+    &-dropdown {
+        position: absolute;
+        top: 57px;
+        right: 20px;
+        background: var(--background);
+        border-radius: var(--radius);
+        border: 1px solid var(--border-color);
+        width: 250px;
+        overflow: hidden;
+
+        button {
+            display: flex;
+            gap: 4px;
+            color: var(--primary-hover);
+            align-items: center;
+            padding: 8px;
+            font-size: 0.9rem !important;
+            transition: all 0.3s;
+            width: 100%;
+
+            &:hover {
+                background: var(--background-hover);
+            }
+        }
+
+        h1 {
+            margin: 0;
+            padding-top: 4px;
+            margin-left: 8px;
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        div {
+            height: 1px;
+            width: 100%;
+            background: var(--border-color);
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 0.9rem;
+            padding-left: 8px;
+            color: var(--primary-hover);
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        ul {
+            margin: 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        a {
+            display: flex;
+            gap: 4px;
+            color: var(--primary-hover);
+            align-items: center;
+            padding: 8px;
+            font-size: 0.9rem !important;
+            transition: all 0.3s;
+
+            &:hover {
+                background: var(--background-hover);
             }
         }
     }
@@ -131,9 +224,11 @@
             &-login {
                 display: none;
             }
+
             ul {
                 display: flex;
                 gap: 8px;
+
                 li {
                     width: initial;
                 }
@@ -152,6 +247,9 @@
     .home-nav {
         &-menu {
             display: none;
+        }
+        &-dropdown {
+            right: calc((100% / 2) - (980px / 2));
         }
 
         nav {
