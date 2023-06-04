@@ -61,45 +61,17 @@
             }
         }
 
-        &-signin {
-            background: rgba(0, 0, 0, 0.1);
-            padding: 8px;
-            padding-left: 15px;
-            padding-right: 15px;
-            color: var(--primary);
-            border-radius: var(--radius);
-            font-weight: 500;
-            transition: all 0.3s;
+        a {
             display: none;
-
-            &:hover {
-                background: rgba(0, 0, 0, 0.2);
-            }
-        }
-
-        &-menu {
-            background: rgba(0, 0, 0, 0.1);
-            padding: 8px;
-            padding-left: 15px;
-            padding-right: 15px;
-            color: var(--primary) !important;
-            border-radius: var(--radius);
-            font-weight: 500;
-            font-size: 1rem !important;
-            transition: all 0.3s;
-            display: none;
-
-            &:hover {
-                background: rgba(0, 0, 0, 0.2);
-            }
         }
     }
 
     &-menu {
         position: absolute;
+        z-index: 100;
         top: 70px;
         width: 100%;
-        background: var(--background);
+        background: hsl(var(--background));
         z-index: 100;
         left: 0;
         right: 0;
@@ -134,16 +106,10 @@
             margin-top: 12px;
             width: 100%;
             text-transform: uppercase;
-            color: var(--primary);
-            background: rgba(0, 0, 0, 0.1);
+            color: hsl(var(--foreground));
             height: 40px;
             border-radius: var(--radius);
             transition: all 0.3s;
-
-            &:hover,
-            &:focus {
-                background: rgba(0, 0, 0, 0.2);
-            }
         }
     }
 
@@ -220,6 +186,11 @@
 
 @media (min-width: 768px) {
     .home-nav {
+        &-links {
+            a {
+                display: flex;
+            }
+        }
         &-menu {
             &-login {
                 display: none;
@@ -232,12 +203,6 @@
                 li {
                     width: initial;
                 }
-            }
-        }
-
-        &-links {
-            a {
-                display: initial;
             }
         }
     }

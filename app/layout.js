@@ -1,7 +1,21 @@
-import '@/styles/globals.scss'
+import '@/styles/globals.css'
 import '@/styles/main.scss';
 
+import { Inter as FontSans } from "next/font/google"
+import localFont from "next/font/local"
+
 import { ThemeProvider } from "@/hooks/theme";
+import { cn } from '@/libs/utils';
+
+const fontSans = FontSans({
+    subsets: ["latin"],
+    variable: "--font-sans",
+})
+
+const fontHeading = localFont({
+    src: "../fonts/CalSans-SemiBold.woff2",
+    variable: "--font-heading",
+})
 
 export const metadata = {
     title: {
@@ -26,9 +40,11 @@ export const metadata = {
 export default function Layout({ children }) {
     return (
         <html lang="en">
-            <ThemeProvider>
-                {children}
-            </ThemeProvider>
+            <body suppressHydrationWarning className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable, fontHeading.variable)}>
+                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                    {children}
+                </ThemeProvider>
+            </body>
         </html>
     )
 }

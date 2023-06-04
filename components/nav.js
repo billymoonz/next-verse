@@ -4,18 +4,19 @@ import React from 'react';
 
 import Link from 'next/link';
 
-import { useTheme } from "@/hooks/theme";
+import { useTheme } from "next-themes"
+import { ModeToggle } from './mode-toggle';
 
 import { RiMenu5Fill, RiCloseLine } from 'react-icons/ri';
-import { BsSun, BsMoon } from 'react-icons/bs';
 
 import { signOut } from 'next-auth/react';
+
+import { buttonVariants } from './ui/button';
+import { cn } from '@/libs/utils';
 
 import '@/styles/components/navigation/nav.scss';
 
 export function Nav() {
-    const { theme, setTheme } = useTheme();
-
     const [menu, setMenu] = React.useState(false);
 
     React.useEffect(() => {
@@ -49,7 +50,7 @@ export function Nav() {
                 <li><Link href='/pricing'>Pricing</Link></li>
                 <li><Link target='_blank' href='mailto:contact@next-verse.net'>Contact Us</Link></li>
             </ul>
-            <Link className='home-nav-menu-login' href='/login'>Login</Link>
+            <Link className='home-nav-menu-login bg-secondary hover:bg-secondary/80' href='/login'>Login</Link>
         </div>}
         <header className='home-nav'>
             <nav>
@@ -62,9 +63,8 @@ export function Nav() {
                     <li><Link target='_blank' href='mailto:contact@next-verse.net'>Contact Us</Link></li>
                 </ul>
                 <div className='home-nav-links'>
-                    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>{theme === 'light' ?
-                        <BsMoon /> : <BsSun />}</button>
-                    <Link href='/login' className='home-nav-links-signin'>Login</Link>
+                    <ModeToggle/>
+                    <Link href='/login' className={cn(buttonVariants({ variant: 'secondary', size: 'sm' }))}>Login</Link>
                 </div>
             </nav>
         </header>
