@@ -1,5 +1,7 @@
 'use client';
 
+import { hasCookie, getCookie, setCookie } from 'cookies-next';
+
 import React from 'react';
 
 const ThemeContext = React.createContext('light');
@@ -16,11 +18,11 @@ export function ThemeProvider({children}){
     const [theme, setTheme] = React.useState(null);
     
     React.useEffect(() =>{
-        setTheme(window.sessionStorage.getItem('app-theme') !== null ? window.sessionStorage.getItem('app-theme') : 'light');
+        setTheme(hasCookie('app-theme') ? getCookie('app-theme') === 'dark' ? 'dark' : 'light' : 'light');
     },[])
     
     const updateTheme = (value) =>{
-        sessionStorage.setItem('app-theme', value);
+        setCookie('app-theme', value)
         setTheme(value);
     }
     
