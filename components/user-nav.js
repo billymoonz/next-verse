@@ -42,6 +42,9 @@ export function UserAccountNav({ user }) {
                 <DropdownMenuItem asChild>
                     <Link href="/course/billing">Billing</Link>
                 </DropdownMenuItem>
+                {user.admin && <DropdownMenuItem asChild>
+                    <Link href="/admin">Admin</Link>
+                </DropdownMenuItem>}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
                     className="cursor-pointer"

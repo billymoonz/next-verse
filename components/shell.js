@@ -1,7 +1,7 @@
 'use client';
 
 import { DashNav } from "@/components/nav";
-import { Icons } from "./icons";
+import { Icons } from "@/components/icons";
 import { cn } from "@/libs/utils";
 
 import Link from "next/link";
@@ -48,6 +48,17 @@ export function CourseShell({ user, courses, children }) {
                             >
                                 <Icons.billing className="mr-2 h-4 w-4" />
                                 <span>Billing</span>
+                            </span>
+                        </Link>
+                        <Link href={'/admin'}>
+                            <span
+                                className={cn(
+                                    "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground",
+                                    path === '/admin' ? "bg-accent" : "transparent",
+                                )}
+                            >
+                                <Icons.user className="mr-2 h-4 w-4" />
+                                <span>Admin</span>
                             </span>
                         </Link>
                     </nav>

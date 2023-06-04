@@ -4,6 +4,7 @@
     align-items: center;
     z-index: 900;
     justify-content: center;
+
     nav {
         position: relative;
         background: transparent;
@@ -75,10 +76,9 @@
                 a {
                     padding: 5px;
                     display: block;
-                    color: var(--primary);
+                    color: hsl(var(--muted-foreground));
 
                     &:hover {
-                        color: var(--secondary);
                         text-decoration: underline;
                     }
                 }
@@ -107,6 +107,7 @@
                 display: flex;
             }
         }
+
         &-menu {
             &-login {
                 display: none;
@@ -129,9 +130,6 @@
         &-menu {
             display: none;
         }
-        &-dropdown {
-            right: calc((100% / 2) - (980px / 2));
-        }
 
         nav {
             button[type=submit] {
@@ -148,13 +146,13 @@
 
                 li {
                     font-size: 0.8rem;
-                    color: var(--main);
+                    color: hsl(var(--muted-foreground));
                     transition: all 0.3s;
                     text-transform: uppercase;
                     letter-spacing: 0.1rem;
 
                     &:hover {
-                        color: var(--primary-hover);
+                        color: hsl(var(--background-foreground));
                     }
                 }
             }

@@ -16,6 +16,14 @@ export const authOptions = {
     pages: {
         signIn: '/',
         signOut: '/',
-        error: '/'
+        error: '/',
+        newUser: '/course/billing'
+    },
+    callbacks: {
+        async session({ session, token, user }) {
+            let result = { ...session };
+            result.user = { name: user.name, email: user.email, image: user.image, joinedAt: user.createdAt, updatedAt: user.updatedAt, admin: user.admin }
+            return result;
+        }
     }
 }
