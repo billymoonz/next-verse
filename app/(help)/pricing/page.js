@@ -1,5 +1,3 @@
-import '@/styles/pages/home.scss';
-
 import {Nav} from '@/components/nav';
 
 export const metadata = {

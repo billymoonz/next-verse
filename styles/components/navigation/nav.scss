@@ -1,16 +1,15 @@
 .home-nav {
-    padding-left: 20px;
-    padding-right: 20px;
     width: 100%;
     display: flex;
     align-items: center;
+    z-index: 900;
     justify-content: center;
     nav {
         position: relative;
         background: transparent;
         height: 70px;
-        width: 100%;
-        max-width: 980px;
+        width: calc(100% - 60px);
+        max-width: 1330px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -48,19 +47,6 @@
         position: absolute;
         right: 0;
 
-        button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--main);
-            font-size: 1.3rem;
-            transition: all 0.3s;
-
-            &:hover {
-                color: var(--main-darker);
-            }
-        }
-
         a {
             display: none;
         }
@@ -68,7 +54,7 @@
 
     &-menu {
         position: absolute;
-        z-index: 100;
+        z-index: 50;
         top: 70px;
         width: 100%;
         background: hsl(var(--background));
@@ -110,76 +96,6 @@
             height: 40px;
             border-radius: var(--radius);
             transition: all 0.3s;
-        }
-    }
-
-    &-dropdown {
-        position: absolute;
-        top: 57px;
-        right: 20px;
-        background: var(--background);
-        border-radius: var(--radius);
-        border: 1px solid var(--border-color);
-        width: 250px;
-        overflow: hidden;
-
-        button {
-            display: flex;
-            gap: 4px;
-            color: var(--primary-hover);
-            align-items: center;
-            padding: 8px;
-            font-size: 0.9rem !important;
-            transition: all 0.3s;
-            width: 100%;
-
-            &:hover {
-                background: var(--background-hover);
-            }
-        }
-
-        h1 {
-            margin: 0;
-            padding-top: 4px;
-            margin-left: 8px;
-            font-weight: 500;
-            font-size: 1rem;
-            color: var(--primary);
-        }
-
-        div {
-            height: 1px;
-            width: 100%;
-            background: var(--border-color);
-        }
-
-        h2 {
-            margin: 0;
-            font-size: 0.9rem;
-            padding-left: 8px;
-            color: var(--primary-hover);
-            padding-bottom: 4px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        ul {
-            margin: 0;
-            list-style: none;
-            padding: 0;
-        }
-
-        a {
-            display: flex;
-            gap: 4px;
-            color: var(--primary-hover);
-            align-items: center;
-            padding: 8px;
-            font-size: 0.9rem !important;
-            transition: all 0.3s;
-
-            &:hover {
-                background: var(--background-hover);
-            }
         }
     }
 }
@@ -227,6 +143,8 @@
                 padding: 0;
                 display: flex;
                 gap: 8px;
+                position: absolute;
+                left: 160px;
 
                 li {
                     font-size: 0.8rem;
@@ -246,5 +164,13 @@
                 left: 0;
             }
         }
+    }
+}
+
+.home-nav-border {
+    border-bottom: 1px solid hsl(var(--border));
+
+    &-top {
+        border-top: 1px solid hsl(var(--border));
     }
 }

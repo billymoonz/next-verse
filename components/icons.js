@@ -4,7 +4,6 @@ import {
     Check,
     ChevronLeft,
     ChevronRight,
-    Command,
     CreditCard,
     File,
     FileText,
@@ -12,7 +11,7 @@ import {
     Image,
     Laptop,
     Loader2,
-    LucideProps,
+    Heart,
     Moon,
     MoreVertical,
     Pizza,
@@ -26,7 +25,6 @@ import {
 } from "lucide-react"
 
 export const Icons = {
-    logo: Command,
     close: X,
     spinner: Loader2,
     chevronLeft: ChevronLeft,
@@ -40,6 +38,7 @@ export const Icons = {
     ellipsis: MoreVertical,
     add: Plus,
     warning: AlertTriangle,
+    heart: Heart,
     user: User,
     arrowRight: ArrowRight,
     help: HelpCircle,

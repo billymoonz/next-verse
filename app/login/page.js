@@ -1,5 +1,3 @@
-import '@/styles/pages/login.scss'
-
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 

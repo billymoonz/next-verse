@@ -23,6 +23,14 @@ export const metadata = {
         template: 'NextVerse • %s'
     },
     description: 'NextVerse is your gateway to mastering Next.js, the powerful framework for building dynamic web applications. Join our comprehensive course and unlock the full potential of Next.js. Learn cutting-edge techniques, harness the latest features, and build stunning web experiences. Take your web development skills to the next level with NextVerse today.',
+    keywords: [
+        "Next.js",
+        "React",
+        "Server Components",
+        "Components",
+        "Course",
+    ],
+    creator: 'Billy Moonz',
     viewport: {
         width: 'device-width',
         initialScale: 1,
@@ -30,17 +38,28 @@ export const metadata = {
     },
     authors: [
         {
-            name: "Billy Mooney",
+            name: "Billy Moonz",
             url: "https://billymoonz.org",
         },
     ],
-    creator: "Billy Mooney",
+    icons: {
+        icon: "/favicon.ico",
+        shortcut: "/favicon-16x16.png",
+        apple: "/apple-touch-icon.png",
+    }
 }
 
 export default function Layout({ children }) {
     return (
-        <html lang="en">
-            <body suppressHydrationWarning className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable, fontHeading.variable)}>
+        <html lang="en" suppressHydrationWarning>
+            <head />
+            <body
+                className={cn(
+                    "min-h-screen bg-background font-sans antialiased",
+                    fontSans.variable,
+                    fontHeading.variable
+                )}
+            >
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     {children}
                 </ThemeProvider>

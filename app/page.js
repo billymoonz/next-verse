@@ -6,8 +6,6 @@ import { Nav } from '@/components/nav';
 import { cn } from '@/libs/utils';
 import { buttonVariants } from '@/components/ui/button';
 
-import '@/styles/pages/home.scss';
-
 export default function Home() {
   return (<div>
     <Nav />

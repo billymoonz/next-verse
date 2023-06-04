@@ -4,14 +4,10 @@ import React from 'react';
 
 import Link from 'next/link';
 
-import { useTheme } from "next-themes"
-import { ModeToggle } from './mode-toggle';
-
+import { ModeToggle } from '@/components/mode-toggle';
+import { UserAccountNav } from '@/components/user-nav';
 import { RiMenu5Fill, RiCloseLine } from 'react-icons/ri';
-
-import { signOut } from 'next-auth/react';
-
-import { buttonVariants } from './ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/libs/utils';
 
 import '@/styles/components/navigation/nav.scss';
@@ -72,20 +68,11 @@ export function Nav() {
 }
 
 export function DashNav({ user }) {
-    const { theme, setTheme } = useTheme();
-
     const [menu, setMenu] = React.useState(false);
-    const [dropdown, setDropdown] = React.useState(false);
 
     React.useEffect(() => {
         const onClickEvent = () => {
             setMenu(previousValue => {
-                if (previousValue) {
-                    return false;
-                }
-                return previousValue;
-            })
-            setDropdown(previousValue => {
                 if (previousValue) {
                     return false;
                 }
@@ -106,18 +93,8 @@ export function DashNav({ user }) {
         }
     }
 
-    const toggleDropdown = () => {
-        if (dropdown) {
-            setDropdown(false);
-        } else {
-            setTimeout(() => {
-                setDropdown(true);
-            }, 10);
-        }
-    }
-
     return (<div>
-        {menu && <div className='home-nav-menu'>
+        {menu && <div className='home-nav-menu home-nav-border-top'>
             <ul>
                 <li><Link href='/twitter'>Twitter</Link></li>
                 <li><Link href='/discord'>Discord</Link></li>
@@ -125,19 +102,7 @@ export function DashNav({ user }) {
                 <li><Link target='_blank' href='mailto:support@next-verse.net'>Help</Link></li>
             </ul>
         </div>}
-        {dropdown && <div className='home-nav-dropdown'>
-            <h1>{user.name}</h1>
-            <h2>{user.email}</h2>
-            <ul>
-                <li><Link href='/course/dashboard'>Dashboard</Link></li>
-                <li><Link href='/course/favourites'>Favourites</Link></li>
-                <li><Link href='/course/billing'>Subscription</Link></li>
-            </ul>
-            <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>{theme === 'light' ? 'Dark Theme' : 'Light Theme'}</button>
-            <div />
-            <button onClick={() => signOut()}>Sign Out</button>
-        </div>}
-        <header className='home-nav'>
+        <header className='home-nav home-nav-border'>
             <nav>
                 <button onClick={toggleMenu} type='submit'>{menu ? <RiCloseLine /> : <RiMenu5Fill />}</button>
                 <h1><Link href='/'>NextVerse</Link></h1>
@@ -148,7 +113,8 @@ export function DashNav({ user }) {
                     <li><Link target='_blank' href='mailto:support@next-verse.net'>Help</Link></li>
                 </ul>
                 <div className='home-nav-links'>
-                    <button className='home-nav-links-menu' onClick={toggleDropdown}>Menu</button>
+                    <ModeToggle/>
+                    <UserAccountNav user={user}/>
                 </div>
             </nav>
         </header>
