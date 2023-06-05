@@ -54,8 +54,8 @@ model User {
 
   admin Boolean?
 
-  favoriteLessons Lesson[]      @relation("favorite_lessons")
-  lessonsOpened   Lesson[]      @relation("lessons_opened")
+  favoriteLessons FavoriteLessons[]
+  lessonsOpened   LessonsOpened[]
   lessonsCreated  Lesson[]
   quizEntries     LessonEntry[]
 
@@ -90,22 +90,22 @@ model Chapter {
 }
 
 model Lesson {
-  id          String           @id @default(cuid())
+  id          String            @id @default(cuid())
   name        String
-  slug        String           @unique
+  slug        String            @unique
   description String
   thumbnail   String
-  videoKey    String           @map(name: "video_key")
-  uniqueViews User[]           @relation("lessons_opened")
-  favorited   User[]           @relation("favorite_lessons")
-  createdAt   DateTime         @default(now()) @map(name: "created_at")
-  updatedAt   DateTime         @default(now()) @map(name: "updated_at")
+  videoKey    String            @map(name: "video_key")
+  favorited   FavoriteLessons[]
+  uniqueViews LessonsOpened[]
+  createdAt   DateTime          @default(now()) @map(name: "created_at")
+  updatedAt   DateTime          @default(now()) @map(name: "updated_at")
   questions   LessonQuestion[]
   entries     LessonEntry[]
-  chapterId   String?          @map(name: "chapter_id")
-  chapter     Chapter?         @relation(fields: [chapterId], references: [id], onDelete: SetNull)
-  authorId    String?          @map(name: "author_id")
-  author      User?            @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  chapterId   String?           @map(name: "chapter_id")
+  chapter     Chapter?          @relation(fields: [chapterId], references: [id], onDelete: SetNull)
+  authorId    String?           @map(name: "author_id")
+  author      User?             @relation(fields: [authorId], references: [id], onDelete: SetNull)
 
   @@map(name: "course_lessons")
 }
@@ -139,7 +139,6 @@ model QuestionAnswer {
   responses          QuestionResponse[]
   questionId         String             @map(name: "question_id")
   question           LessonQuestion     @relation(fields: [questionId], references: [id], onDelete: Cascade)
-  questionResponseId String
 
   @@map("lesson_question_answers")
 }
@@ -155,4 +154,24 @@ model QuestionResponse {
   lessonEntryId String         @map(name: "lesson_entry_id")
 
   @@map("lesson_question_responses")
+}
+
+model FavoriteLessons {
+  user     User   @relation(fields: [userId], references: [id])
+  userId   String @map(name: "user_id")
+  lesson   Lesson @relation(fields: [lessonId], references: [id])
+  lessonId String @map(name: "lesson_id")
+
+  @@id([userId, lessonId])
+  @@map("lessons_favorited")
+}
+
+model LessonsOpened {
+  user     User   @relation(fields: [userId], references: [id])
+  userId   String @map(name: "user_id")
+  lesson   Lesson @relation(fields: [lessonId], references: [id])
+  lessonId String @map(name: "lesson_id")
+
+  @@id([userId, lessonId])
+  @@map("lessons_opened")
 }
