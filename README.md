@@ -4,7 +4,7 @@
 - [x] Open Source 
 - [x] Help Pages
 - [x] Authentication W/ Github
-- [ ] Data Structure
+- [x] Data Structure
 - [ ] Admin Panel
 - [ ] Course Chapter Editor
 - [ ] Course Chapter Lesson Editor

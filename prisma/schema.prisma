@@ -54,6 +54,11 @@ model User {
 
   admin Boolean?
 
+  favoriteLessons Lesson[]      @relation("favorite_lessons")
+  lessonsOpened   Lesson[]      @relation("lessons_opened")
+  lessonsCreated  Lesson[]
+  quizEntries     LessonEntry[]
+
   stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
   stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
   stripePriceId          String?   @map(name: "stripe_price_id")
@@ -79,17 +84,75 @@ model Chapter {
   thumbnail   String
   createdAt   DateTime @default(now()) @map(name: "created_at")
   updatedAt   DateTime @default(now()) @map(name: "updated_at")
+  lessons     Lesson[]
 
   @@map(name: "course_chapters")
 }
 
 model Lesson {
-  id          String   @id @default(cuid())
+  id          String           @id @default(cuid())
   name        String
-  slug        String   @unique
+  slug        String           @unique
   description String
   thumbnail   String
-  video_key   String
-  createdAt   DateTime @default(now()) @map(name: "created_at")
-  updatedAt   DateTime @default(now()) @map(name: "updated_at")
+  videoKey    String           @map(name: "video_key")
+  uniqueViews User[]           @relation("lessons_opened")
+  favorited   User[]           @relation("favorite_lessons")
+  createdAt   DateTime         @default(now()) @map(name: "created_at")
+  updatedAt   DateTime         @default(now()) @map(name: "updated_at")
+  questions   LessonQuestion[]
+  entries     LessonEntry[]
+  chapterId   String?          @map(name: "chapter_id")
+  chapter     Chapter?         @relation(fields: [chapterId], references: [id], onDelete: SetNull)
+  authorId    String?          @map(name: "author_id")
+  author      User?            @relation(fields: [authorId], references: [id], onDelete: SetNull)
+
+  @@map(name: "course_lessons")
+}
+
+model LessonEntry {
+  id        String             @id @default(cuid())
+  userId    String             @map(name: "user_id")
+  user      User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson    Lesson             @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  lessonId  String             @map(name: "lesson_id")
+  responses QuestionResponse[]
+
+  @@map(name: "lesson_entries")
+}
+
+model LessonQuestion {
+  id        String             @id @default(cuid())
+  question  String
+  answers   QuestionAnswer[]
+  lessonId  String             @map(name: "lesson_id")
+  lesson    Lesson             @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  responses QuestionResponse[]
+
+  @@map(name: "lesson_questions")
+}
+
+model QuestionAnswer {
+  id                 String             @id @default(cuid())
+  answer             String
+  correct            Boolean
+  responses          QuestionResponse[]
+  questionId         String             @map(name: "question_id")
+  question           LessonQuestion     @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  questionResponseId String
+
+  @@map("lesson_question_answers")
+}
+
+model QuestionResponse {
+  id            String         @id @default(cuid())
+  answer        QuestionAnswer @relation(fields: [answerId], references: [id], onDelete: Cascade)
+  answerId      String         @map(name: "answer_id")
+  correct       Boolean
+  questionId    String         @map(name: "question_id")
+  question      LessonQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  entry         LessonEntry    @relation(fields: [lessonEntryId], references: [id], onDelete: Cascade)
+  lessonEntryId String         @map(name: "lesson_entry_id")
+
+  @@map("lesson_question_responses")
 }
