@@ -4,11 +4,12 @@
 - [x] Open Source 
 - [x] Help Pages
 - [x] Authentication W/ Github
+- [ ] Data Structure
 - [ ] Admin Panel
 - [ ] Course Chapter Editor
 - [ ] Course Chapter Lesson Editor
-- [ ] Course Lesson Quiz Questions
-- [ ] User Course Progress [calculated by their quiz success rate]
+- [ ] Course Quiz Questions / Quiz Entries
+- [ ] User Course Progress [calculated using their quiz success rate]
 - [ ] User Dashboard
 - [ ] User Favourites
 - [ ] User Subscription

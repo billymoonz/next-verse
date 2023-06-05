@@ -70,3 +70,26 @@ model VerificationToken {
   @@unique([identifier, token])
   @@map(name: "verification_tokens")
 }
+
+model Chapter {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String
+  thumbnail   String
+  createdAt   DateTime @default(now()) @map(name: "created_at")
+  updatedAt   DateTime @default(now()) @map(name: "updated_at")
+
+  @@map(name: "course_chapters")
+}
+
+model Lesson {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String
+  thumbnail   String
+  video_key   String
+  createdAt   DateTime @default(now()) @map(name: "created_at")
+  updatedAt   DateTime @default(now()) @map(name: "updated_at")
+}
