@@ -1,7 +1,7 @@
 export const metadata = {
-    title: 'Dashboard'
+    title: 'Favorites'
 }
 
 export default async function Dashboard(){
-    return('Dashboard')
+    return('Favorites')
 }

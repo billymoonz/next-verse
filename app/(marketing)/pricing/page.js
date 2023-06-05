@@ -1,4 +1,3 @@
-import { Nav } from '@/components/nav';
 import { Icons } from '@/components/icons';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/libs/utils';
@@ -15,7 +14,6 @@ export const metadata = {
 
 export default async function PricingPage() {
     return (<div>
-        <Nav />
         <section className="container w-full flex flex-col gap-6 py-8 md:py-12 lg:py-24">
             <div className="mx-auto flex w-full flex-col gap-4 md:max-w-[58rem]">
                 <h2 className="font-bold font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">

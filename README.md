@@ -5,11 +5,12 @@
 - [x] Help Pages
 - [x] Authentication W/ Github
 - [x] Data Structure
-- [ ] Admin Panel
-- [ ] Course Chapter Editor
-- [ ] Course Chapter Lesson Editor
-- [ ] Course Quiz Questions / Quiz Entries
-- [ ] User Course Progress [calculated using their quiz success rate]
-- [ ] User Dashboard
-- [ ] User Favourites
 - [ ] User Subscription
+- [ ] User Billing Page
+- [ ] Admin Chapter Page
+- [ ] Admin Lesson Page
+- [ ] Admin Subscriptions Page
+- [ ] User Dashboard
+- [ ] Course Chapter Page
+- [ ] Course Lesson Page
+- [ ] User Favorites Page

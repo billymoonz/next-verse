@@ -27,14 +27,14 @@ export function AdminShell({ user, children }) {
                                 <span>Dashboard</span>
                             </span>
                         </Link>
-                        <Link href={'/course/favourites'}>
+                        <Link href={'/course/favorites'}>
                             <span
                                 className={cn(
                                     "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground",
                                 )}
                             >
                                 <Icons.heart className="mr-2 h-4 w-4" />
-                                <span>Favourites</span>
+                                <span>Favorites</span>
                             </span>
                         </Link>
                         <Link href={'/course/billing'}>
@@ -88,15 +88,15 @@ export function CourseShell({ user, children }) {
                                 <span>Dashboard</span>
                             </span>
                         </Link>
-                        <Link href={'/course/favourites'}>
+                        <Link href={'/course/favorites'}>
                             <span
                                 className={cn(
                                     "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground",
-                                    path === '/course/favourites' ? "bg-accent" : "transparent",
+                                    path === '/course/favorites' ? "bg-accent" : "transparent",
                                 )}
                             >
                                 <Icons.heart className="mr-2 h-4 w-4" />
-                                <span>Favourites</span>
+                                <span>Favorites</span>
                             </span>
                         </Link>
                         <Link href={'/course/billing'}>

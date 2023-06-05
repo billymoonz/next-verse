@@ -37,7 +37,7 @@ export function UserAccountNav({ user }) {
                     <Link href="/course/dashboard">Dashboard</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                    <Link href="/course/favourites">Favourites</Link>
+                    <Link href="/course/favorites">Favorites</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                     <Link href="/course/billing">Billing</Link>
