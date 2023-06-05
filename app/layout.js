@@ -1,5 +1,3 @@
-'use server'
-
 import '@/styles/globals.css'
 import '@/styles/main.scss';
 
