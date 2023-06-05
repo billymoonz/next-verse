@@ -15,36 +15,41 @@
 
 
 ### Data Structure
-```
-+-- _user
-|   +-- name
-|   +-- email
-|   +-- image
-|   +-- admin
-|   +-- stripeCustomerId
-|   +-- stripeSubscriptionId
-|   +-- stripePriceId
-|   +-- stripePriceId
-|   +-- stripeCurrentPeriodEnd
-|   +-- createdAt
-|   +-- updatedAt
-+-- _chapter
-|   +-- name
-|   +-- slug
-|   +-- description
-|   +-- thumbnail
-|   +-- lessons
-|   +-- authors
-|   +-- createdAt
-|   +-- updatedAt
-+-- _lesson
-|   +-- name
-|   +-- slug
-|   +-- description
-|   +-- thumbnail
-|   +-- video
-|   +-- questions
-|   +-- author
-|   +-- createdAt
-|   +-- updatedAt
-```
+#### user
+- id
+- name
+- email
+- image
+- admin
+- chapters
+- lessons
+- stripeCustomerId
+- stripeSubscriptionId
+- stripePriceId
+- stripePriceId
+- stripeCurrentPeriodEnd
+- createdAt
+- updatedAt
+#### chapter
+- id
+- name
+- slug
+- description
+- thumbnail
+- lessons
+- createdAt
+- updatedAt
+#### lesson
+- id
+- name
+- slug
+- description
+- thumbnail
+- video
+- questions - todo: add questions/entries/answers to data structure
+- createdAt
+- updatedAt
+- author_id
+- author
+- chapter_id
+- chapter
