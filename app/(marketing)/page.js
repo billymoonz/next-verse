@@ -5,8 +5,9 @@ import Link from 'next/link'
 import { Nav } from '@/components/nav';
 import { cn } from '@/libs/utils';
 import { buttonVariants } from '@/components/ui/button';
+import { metadata } from '../layout';
 
-export default function Home() {
+export default async function Home() {
   return (<div>
     <Nav />
     <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
