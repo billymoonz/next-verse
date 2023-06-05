@@ -1,4 +1,4 @@
-.home-nav {
+.nav {
     width: 100%;
     display: flex;
     align-items: center;
@@ -101,7 +101,7 @@
 }
 
 @media (min-width: 768px) {
-    .home-nav {
+    .nav {
         &-links {
             a {
                 display: flex;
@@ -126,7 +126,7 @@
 }
 
 @media(min-width: 1024px) {
-    .home-nav {
+    .nav {
         &-menu {
             display: none;
         }
@@ -165,7 +165,7 @@
     }
 }
 
-.home-nav-border {
+.nav-border {
     border-bottom: 1px solid hsl(var(--border));
 
     &-top {
