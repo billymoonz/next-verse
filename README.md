@@ -12,3 +12,38 @@
 - [ ] User Dashboard
 - [ ] User Favourites
 - [ ] User Subscription
+
+
+### Data Structure
+.
++-- _user
+|   +-- name
+|   +-- email
+|   +-- image
+|   +-- admin
+|   +-- stripeCustomerId
+|   +-- stripeSubscriptionId
+|   +-- stripePriceId
+|   +-- stripePriceId
+|   +-- stripeCurrentPeriodEnd
+|   +-- createdAt
+|   +-- updatedAt
++-- _chapter
+|   +-- name
+|   +-- slug
+|   +-- description
+|   +-- thumbnail
+|   +-- lessons
+|   +-- authors
+|   +-- createdAt
+|   +-- updatedAt
++-- _lesson
+|   +-- name
+|   +-- slug
+|   +-- description
+|   +-- thumbnail
+|   +-- video
+|   +-- questions
+|   +-- author
+|   +-- createdAt
+|   +-- updatedAt
