@@ -15,7 +15,7 @@
 
 
 ### Data Structure
-.
+```
 +-- _user
 |   +-- name
 |   +-- email
@@ -47,3 +47,4 @@
 |   +-- author
 |   +-- createdAt
 |   +-- updatedAt
+```
