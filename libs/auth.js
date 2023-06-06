@@ -22,7 +22,7 @@ export const authOptions = {
     callbacks: {
         async session({ session, token, user }) {
             let result = { ...session };
-            result.user = { name: user.name, email: user.email, image: user.image, joinedAt: user.createdAt, updatedAt: user.updatedAt, admin: user.admin }
+            result.user = { id: user.id, name: user.name, email: user.email, image: user.image, joinedAt: user.createdAt, updatedAt: user.updatedAt, admin: user.admin }
             return result;
         }
     }
