@@ -1,18 +1,17 @@
 import { headers } from "next/headers"
 import { database } from "@/libs/db"
 import { stripe } from "@/libs/stripe"
-import { buffer } from 'micro'
 
-export async function GET(req) {
+export async function POST(req) {
+  const body = await req.json();
   const signingSecret = process.env.STRIPE_WEBHOOK_SECRET;
   const signature = headers().get("stripe-signature")
-  let bufferedReq = await buffer(req);
 
   let event;
 
   try {
     event = stripe.webhooks.constructEvent(
-      bufferedReq,
+      body,
       signature,
       signingSecret
     )
