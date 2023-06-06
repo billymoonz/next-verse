@@ -3,7 +3,7 @@ import { database } from "@/libs/db"
 import { stripe } from "@/libs/stripe"
 
 export async function POST(req) {
-  const body = await req.json();
+  const body = await req.text();
   const signingSecret = process.env.STRIPE_WEBHOOK_SECRET;
   const signature = headers().get("stripe-signature")
 
