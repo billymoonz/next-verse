@@ -5,6 +5,7 @@ import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
 
 import { ThemeProvider } from "@/hooks/theme";
+import { Toaster } from "@/components/ui/toaster"
 import { cn } from '@/libs/utils';
 
 const fontSans = FontSans({
@@ -77,6 +78,7 @@ export default function Layout({ children }) {
             >
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     {children}
+                    <Toaster />
                 </ThemeProvider>
             </body>
         </html>

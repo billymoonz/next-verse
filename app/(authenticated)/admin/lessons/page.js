@@ -4,5 +4,8 @@ export const metadata = {
     }
 }
 export default async function AdminLessons() {
-    return ('Lessons');
+    return (<div>
+        <h1 className="font-bold text-3xl md:text-4xl">Lessons</h1>
+        <p className="text-lg text-muted-foreground">View & manage course lessons.</p>
+    </div>)
 }

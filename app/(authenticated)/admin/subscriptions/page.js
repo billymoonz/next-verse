@@ -4,5 +4,8 @@ export const metadata = {
     }
 }
 export default async function AdminSubscriptions() {
-    return ('Subscriptions');
+    return (<div>
+        <h1 className="font-bold text-3xl md:text-4xl">Subscriptions</h1>
+        <p className="text-lg text-muted-foreground">View a log of subscription events and more.</p>
+    </div>)
 }
