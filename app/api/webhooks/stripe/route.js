@@ -24,7 +24,7 @@ export async function POST(req) {
 
   if (event.type === "checkout.session.completed") {
     const subscription = await stripe.subscriptions.retrieve(
-      session.subscription
+      session.subscription.id
     )
 
     await db.user.update({
@@ -44,7 +44,7 @@ export async function POST(req) {
 
   if (event.type === "invoice.payment_succeeded") {
     const subscription = await stripe.subscriptions.retrieve(
-      session.subscription
+      session.subscription.id
     )
 
     await db.user.update({
