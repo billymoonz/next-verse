@@ -1,18 +1,20 @@
 import { headers } from "next/headers"
 import { database } from "@/libs/db"
 import { stripe } from "@/libs/stripe"
+import { buffer } from 'micro'
 
 export async function GET(req) {
-  const body = await req.text()
-  const signature = headers().get("Stripe-Signature")
+  const signingSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  const signature = headers().get("stripe-signature")
+  let bufferedReq = await buffer(req);
 
   let event;
 
   try {
     event = stripe.webhooks.constructEvent(
-      body,
+      bufferedReq,
       signature,
-      process.env.STRIPE_WEBHOOK_SECRET
+      signingSecret
     )
   } catch (error) {
     return new Response(`Webhook Error: ${error.message}`, { status: 400 })
