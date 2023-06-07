@@ -27,21 +27,21 @@ export async function POST(req) {
       session.subscription
     )
 
-    // await db.user.update({
-    //   where: {
-    //     id: session?.metadata?.userId,
-    //   },
-    //   data: {
-    //     stripeSubscriptionId: subscription.id,
-    //     stripeCustomerId: subscription.customer,
-    //     stripePriceId: subscription.items.data[0].price.id,
-    //     stripeCurrentPeriodEnd: new Date(
-    //       subscription.current_period_end * 1000
-    //     ),
-    //   },
-    // });
+    await db.user.update({
+      where: {
+        id: session?.metadata?.userId,
+      },
+      data: {
+        stripeSubscriptionId: subscription.id,
+        stripeCustomerId: subscription.customer,
+        stripePriceId: subscription.items.data[0].price.id,
+        stripeCurrentPeriodEnd: new Date(
+          subscription.current_period_end * 1000
+        ),
+      },
+    });
 
-    return new Response(null, { status: 200, subscription })
+    return new Response(null, { status: 200 })
   }
 
   if (event.type === "invoice.payment_succeeded") {
@@ -49,18 +49,17 @@ export async function POST(req) {
       session.subscription
     )
 
-    // await db.user.update({
-    //   where: {
-    //     stripeSubscriptionId: subscription.id,
-    //   },
-    //   data: {
-    //     stripePriceId: subscription.items.data[0].price.id,
-    //     stripeCurrentPeriodEnd: new Date(
-    //       subscription.current_period_end * 1000
-    //     ),
-    //   },
-    // })
-
-    return new Response(null, { status: 200, subscription })
+    await db.user.update({
+      where: {
+        stripeSubscriptionId: subscription.id,
+      },
+      data: {
+        stripePriceId: subscription.items.data[0].price.id,
+        stripeCurrentPeriodEnd: new Date(
+          subscription.current_period_end * 1000
+        ),
+      },
+    })
+    return new Response(null, { status: 200 })
   }
 }
