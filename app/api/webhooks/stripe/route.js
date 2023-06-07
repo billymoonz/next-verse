@@ -38,6 +38,7 @@ export async function POST(req) {
         stripeCurrentPeriodEnd: new Date(
           subscription.current_period_end * 1000
         ),
+        updatedAt: new Date()
       },
     });
 
@@ -58,6 +59,7 @@ export async function POST(req) {
         stripeCurrentPeriodEnd: new Date(
           subscription.current_period_end * 1000
         ),
+        updatedAt: new Date()
       },
     })
     return new Response(null, { status: 200 })
