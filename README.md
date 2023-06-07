@@ -5,7 +5,7 @@
 - [x] Help Pages
 - [x] Authentication W/ Github
 - [x] Data Structure
-- [ ] User Billing Page
+- [X] User Billing Page
 - [ ] Admin Chapter Page
 - [ ] Admin Lesson Page
 - [ ] Admin Subscriptions Page
