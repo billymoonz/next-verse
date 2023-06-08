@@ -1,3 +1,5 @@
+'use server'
+
 import { database } from "@/libs/db";
 
 const db = database();
