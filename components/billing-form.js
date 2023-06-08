@@ -55,7 +55,7 @@ export function BillingForm({ subscriptionPlan }) {
                 {subscriptionPlan.isSubscribed ? 'Manage Subscription' : 'Subscribe'}
             </Button>
             {subscriptionPlan.isSubscribed && <p className="rounded-full text-xs font-medium">
-                {subscriptionPlan.isCanceled ? "Subscription will be canceled on " : "Subscription renews on "}
+                {subscriptionPlan.isCanceled ? "Cancels on " : "Renews on "}
                 {formatDate(subscriptionPlan.stripeCurrentPeriodEnd, '%B%e, %Y')}.
             </p>}
         </div>

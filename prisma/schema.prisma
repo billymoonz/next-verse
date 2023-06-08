@@ -81,7 +81,6 @@ model Chapter {
   name        String
   slug        String   @unique
   description String
-  thumbnail   String
   createdAt   DateTime @default(now()) @map(name: "created_at")
   updatedAt   DateTime @default(now()) @map(name: "updated_at")
   lessons     Lesson[]
@@ -94,8 +93,8 @@ model Lesson {
   name        String
   slug        String            @unique
   description String
-  thumbnail   String
-  videoKey    String            @map(name: "video_key")
+  thumbnail   String            @db.LongText()
+  video       String            @map(name: "video_key") @db.LongText()
   favorited   FavoriteLessons[]
   uniqueViews LessonsOpened[]
   createdAt   DateTime          @default(now()) @map(name: "created_at")
@@ -133,12 +132,12 @@ model LessonQuestion {
 }
 
 model QuestionAnswer {
-  id                 String             @id @default(cuid())
-  answer             String
-  correct            Boolean
-  responses          QuestionResponse[]
-  questionId         String             @map(name: "question_id")
-  question           LessonQuestion     @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  id         String             @id @default(cuid())
+  answer     String
+  correct    Boolean
+  responses  QuestionResponse[]
+  questionId String             @map(name: "question_id")
+  question   LessonQuestion     @relation(fields: [questionId], references: [id], onDelete: Cascade)
 
   @@map("lesson_question_answers")
 }

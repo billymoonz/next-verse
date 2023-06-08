@@ -22,6 +22,7 @@ import {
     Twitter,
     User,
     X,
+    Link,
 } from "lucide-react"
 
 export const Icons = {
@@ -35,6 +36,7 @@ export const Icons = {
     media: Image,
     settings: Settings,
     billing: CreditCard,
+    link: Link,
     ellipsis: MoreVertical,
     add: Plus,
     warning: AlertTriangle,
