@@ -19,7 +19,11 @@ export async function getDashboardData() {
 export async function getChapterData(slug) {
     let user = await getCurrentUser();
     if (!user) return null;
-    return await db.chapter.findUnique({ where: { slug }, select: { name: true, slug: true, description: true, updatedAt: true, lessons: { select: { id: true, name: true, slug: true, description: true, thumbnail: true, updatedAt: true } } } })
+    let chapter = await db.chapter.findUnique({ where: { slug }, select: { name: true, slug: true, description: true, updatedAt: true, lessons: { select: { favorited: { select: { userId: true } }, id: true, name: true, slug: true, description: true, thumbnail: true, updatedAt: true } } } })
+    chapter.lessons.forEach((lesson) => {
+        lesson.favorited = lesson.favorited.filter((fav) => fav.userId === user.id).length === 1;
+    })
+    return chapter;
 }
 
 export async function getLessonData(slug, lessonSlug) {
@@ -33,4 +37,12 @@ export async function getLessonData(slug, lessonSlug) {
         chapter,
         lesson
     }
+}
+
+export async function getUserFavorites() {
+    let user = await getCurrentUser();
+    if (!user) return null;
+    let data = await db.user.findUnique({ where: { id: user.id }, select: { favoriteLessons: { select: { lesson: { select: { chapter: { select: { slug: true } }, name: true, slug: true, description: true, thumbnail: true, updatedAt: true } } } } } })
+    if (!data) return null;
+    return data.favoriteLessons.map((favorite) => favorite.lesson);
 }

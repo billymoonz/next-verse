@@ -10,6 +10,7 @@ import {
     Laptop,
     Loader2,
     Heart,
+    HeartOff,
     Moon,
     MoreVertical,
     Plus,
@@ -18,10 +19,24 @@ import {
     X,
     Link,
     Play,
-    Pause
+    Pause,
+    Maximize,
+    Minimize,
+    ArrowDown,
+    ArrowUp,
+    Wrench,
+    VolumeX,
+    Volume2
 } from "lucide-react"
 
 export const Icons = {
+    volume: Volume2,
+    muted: VolumeX,
+    tools: Wrench,
+    down: ArrowDown,
+    up: ArrowUp,
+    max: Maximize,
+    min: Minimize,
     play: Play,
     pause: Pause,
     close: X,
@@ -35,6 +50,7 @@ export const Icons = {
     add: Plus,
     warning: AlertTriangle,
     heart: Heart,
+    unheart: HeartOff,
     user: User,
     arrowRight: ArrowRight,
     help: HelpCircle,

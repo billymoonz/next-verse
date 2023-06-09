@@ -185,11 +185,11 @@ function LessonBuilder({ chapters }) {
         const onThumbnailChange = (e) => {
             if (e.target.files.length < 1) return;
             let file = e.target.files[0];
-            if (file.size >= 10485760) {
+            if (file.size >= (10485760 * 1.5)) {
                 document.getElementById('thumbnail').value = null;
                 return toast({
                     title: "Whoopsie",
-                    description: "Image size is greater than the 10mb limit.",
+                    description: "Image size is greater than the 15mb limit.",
                     variant: "destructive",
                 });
             }
@@ -202,11 +202,11 @@ function LessonBuilder({ chapters }) {
         const onVideoChange = (e) => {
             if (e.target.files.length < 1) return;
             let file = e.target.files[0];
-            if (file.size >= 10485760) {
+            if (file.size >= (10485760 * 1.5)) {
                 document.getElementById('video').value = null;
                 return toast({
                     title: "Whoopsie",
-                    description: "Video size is greater than the 10mb limit.",
+                    description: "Video size is greater than the 15mb limit.",
                     variant: "destructive",
                 });
             }
@@ -362,11 +362,11 @@ function LessonEditor({ lesson, chapters }) {
         const onThumbnailChange = (e) => {
             if (e.target.files.length < 1) return;
             let file = e.target.files[0];
-            if (file.size >= 10485760) {
+            if (file.size >= (10485760 * 1.5)) {
                 document.getElementById('thumbnail').value = null;
                 return toast({
                     title: "Whoopsie",
-                    description: "Image size is greater than the 10mb limit.",
+                    description: "Image size is greater than the 15mb limit.",
                     variant: "destructive",
                 });
             }
@@ -379,11 +379,11 @@ function LessonEditor({ lesson, chapters }) {
         const onVideoChange = (e) => {
             if (e.target.files.length < 1) return;
             let file = e.target.files[0];
-            if (file.size >= 10485760) {
+            if (file.size >= (10485760 * 1.5)) {
                 document.getElementById('video').value = null;
                 return toast({
                     title: "Whoopsie",
-                    description: "Video size is greater than the 10mb limit.",
+                    description: "Video size is greater than the 15mb limit.",
                     variant: "destructive",
                 });
             }

@@ -9,9 +9,9 @@
 - [x] Admin Chapter Page
 - [x] Admin Lesson Page
 - [ ] User Dashboard
-- [ ] Course Chapter Page
-- [ ] Course Lesson Page
-- [ ] User Favorites Page
+- [x] Course Chapter Page
+- [x] Course Lesson Page
+- [x] User Favorites Page
 - [ ] Lesson Quiz Builder
 - [ ] Lesson Quiz Section
 - [ ] Admin Subscriptions Page
