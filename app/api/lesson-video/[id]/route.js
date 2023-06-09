@@ -5,7 +5,7 @@ import { database } from "@/libs/db";
 const db = database();
 
 export async function GET(req, context) {
-    const auth = getCurrentUser();
+    const auth = await getCurrentUser();
 
     if (!auth) return new Response(null, { status: 401 });
     

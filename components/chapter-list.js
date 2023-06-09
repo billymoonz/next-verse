@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 
-import { Icons } from "@/components/icons";
 import { Skeleton } from "@/components/ui/skeleton";
 import { buttonVariants } from "@/components/ui/button";
 
