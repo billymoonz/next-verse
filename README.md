@@ -8,8 +8,8 @@
 - [x] User Billing Page
 - [x] Admin Chapter Page
 - [x] Admin Lesson Page
-- [ ] Admin Subscriptions Page
 - [ ] User Dashboard
 - [ ] Course Chapter Page
 - [ ] Course Lesson Page
 - [ ] User Favorites Page
+- [ ] Admin Subscriptions Page
