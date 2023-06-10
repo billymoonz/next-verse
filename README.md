@@ -8,10 +8,11 @@
 - [x] User Billing Page
 - [x] Admin Chapter Page
 - [x] Admin Lesson Page
-- [ ] User Dashboard
+- [-] User Dashboard
 - [x] Course Chapter Page
 - [x] Course Lesson Page
 - [x] User Favorites Page
-- [ ] Lesson Quiz Builder
-- [ ] Lesson Quiz Section
+- [-] Lesson Quiz Builder
+- [-] Lesson Quiz Section
 - [ ] Admin Subscriptions Page
+- [ ] Admin Dashboard
