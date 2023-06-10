@@ -5,6 +5,10 @@ import Link from "next/link";
 import { Skeleton } from "./ui/skeleton";
 import { formatDate } from "@/libs/date";
 
+import sugar from 'sugar';
+
+sugar.String.extend();
+
 export function Chapter({ chapter }) {
     return (<div className="mt-[24px]">
         {chapter.lessons.length === 0 && <div>
@@ -30,7 +34,7 @@ function Lesson({ chapter, data, index }) {
                 <img alt='thumbnail' src={data.thumbnail} className="h-20 rounded-sm" />
                 <div>
                     <h1 className="font-bold text-lg flex w-full justify-between items-center">#{index + 1} {data.name}</h1>
-                    <p className="text-muted-foreground text-sm">{data.description}</p>
+                    <p className="text-muted-foreground text-sm">{sugar.String.truncate(data.description, 150)}</p>
                     <p className="text-muted-foreground text-xs">{formatDate(data.updatedAt, '%B%e, %Y')}</p>
                 </div>
             </div>

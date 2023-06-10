@@ -46,42 +46,60 @@ export function LessonsSkeleton() {
                     <Skeleton className="h-5 w-1/5" />
                     <Skeleton className="mt-[8px] h-12 w-full" />
                 </div>
-                <Skeleton className="h-8 w-full" />
+                <div className="flex gap-2">
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                </div>
             </div>
             <div className="flex flex-col justify-between border border-1 rounded-lg p-5 h-[220px]">
                 <div>
                     <Skeleton className="h-5 w-1/5" />
                     <Skeleton className="mt-[8px] h-12 w-full" />
                 </div>
-                <Skeleton className="h-8 w-full" />
+                <div className="flex gap-2">
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                </div>
             </div>
             <div className="flex flex-col justify-between border border-1 rounded-lg p-5 h-[220px]">
                 <div>
                     <Skeleton className="h-5 w-1/5" />
                     <Skeleton className="mt-[8px] h-12 w-full" />
                 </div>
-                <Skeleton className="h-8 w-full" />
+                <div className="flex gap-2">
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                </div>
             </div>
             <div className="flex flex-col justify-between border border-1 rounded-lg p-5 h-[220px]">
                 <div>
                     <Skeleton className="h-5 w-1/5" />
                     <Skeleton className="mt-[8px] h-12 w-full" />
                 </div>
-                <Skeleton className="h-8 w-full" />
+                <div className="flex gap-2">
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                </div>
             </div>
             <div className="flex flex-col justify-between border border-1 rounded-lg p-5 h-[220px]">
                 <div>
                     <Skeleton className="h-5 w-1/5" />
                     <Skeleton className="mt-[8px] h-12 w-full" />
                 </div>
-                <Skeleton className="h-8 w-full" />
+                <div className="flex gap-2">
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                </div>
             </div>
             <div className="flex flex-col justify-between border border-1 rounded-lg p-5 h-[220px]">
                 <div>
                     <Skeleton className="h-5 w-1/5" />
                     <Skeleton className="mt-[8px] h-12 w-full" />
                 </div>
-                <Skeleton className="h-8 w-full" />
+                <div className="flex gap-2">
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                </div>
             </div>
         </div>
     </div>;
@@ -104,7 +122,10 @@ function LessonList({ array, chapters }) {
                         <h1 className="font-bold text-lg flex w-full justify-between items-center">#{index + 1} {item.name}<span><Link href={`/course/chapters/${item.chapter.slug}/${item.slug}`}><Icons.link className="h-5 w-5" /></Link></span></h1>
                         <p className="text-muted-foreground text-sm">{item.description}</p>
                     </div>
-                    <LessonEditor lesson={item} chapters={chapters} />
+                    <div className="flex gap-2 w-full">
+                        <LessonEditor lesson={item} chapters={chapters} />
+                        <Link href={`/admin/lessons/questions/${item.id}`} className={cn("mt-[12px]", buttonVariants())}>Questions</Link>
+                    </div>
                 </div>)
             })}
         </div>
@@ -405,11 +426,11 @@ function LessonEditor({ lesson, chapters }) {
         }
     }}>
         <SheetTrigger disabled={wait}>
-            <LessonButon editor>{wait && <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />}Manage Lesson</LessonButon>
+            <LessonButon editor>{wait && <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />}Editor</LessonButon>
         </SheetTrigger>
         <SheetContent position="right" size="lg">
             <SheetHeader>
-                <SheetTitle>Manage Lesson</SheetTitle>
+                <SheetTitle>Edit Lesson</SheetTitle>
                 <SheetDescription>
                     Enter details, click save & update the lesson.
                 </SheetDescription>
