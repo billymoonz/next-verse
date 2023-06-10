@@ -4,7 +4,7 @@ import '@/styles/main.scss';
 import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
 
-import { ThemeProvider } from "@/hooks/theme";
+import { ThemeProvider } from "@/providers/theme";
 import { Toaster } from "@/components/ui/toaster"
 import { cn } from '@/libs/utils';
 
@@ -14,7 +14,7 @@ const fontSans = FontSans({
 })
 
 const fontHeading = localFont({
-    src: "../fonts/CalSans-SemiBold.woff2",
+    src: "../assets/CalSans-SemiBold.woff2",
     variable: "--font-heading",
 })
 

@@ -1,6 +1,5 @@
 import { database } from "@/libs/db";
 import { getCurrentUser } from "@/libs/session";
-import { userAgent } from "next/server";
 
 const db = database();
 
@@ -14,7 +13,7 @@ export async function DELETE(req) {
     const params = new URLSearchParams(url.search);
 
     if (params.has('id')) {
-        let deleted = await db.chapter.delete({ where: { id: params.get('id') } });
+        let deleted = await db.lesson.delete({ where: { id: params.get('id') } });
         if (deleted) {
             return new Response(null, { status: 200 });
         } else {
@@ -48,7 +47,7 @@ export async function POST(req) {
                         chapterId: chapter,
                         authorId: auth.id,
                         thumbnail,
-                        video
+                        video,
                     }
                 });
                 if (lesson) {

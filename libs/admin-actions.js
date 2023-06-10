@@ -9,7 +9,7 @@ export async function getChapters() {
 }
 
 export async function getLessons() {
-    let lessons = await db.lesson.findMany({ select: { name: true, slug: true, description: true, id: true, chapterId: true, chapter: { select: { slug: true }} } });
+    let lessons = await db.lesson.findMany({ select: { name: true, slug: true, description: true, id: true, chapterId: true, chapter: { select: { slug: true } } } });
     let chapters = await db.chapter.findMany({});
     return {
         lessons,

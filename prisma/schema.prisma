@@ -57,7 +57,7 @@ model User {
   favoriteLessons LessonFavorite[]
   lessonsOpened   LessonView[]
   lessonsCreated  Lesson[]
-  quizEntries     LessonEntry[]
+  lessonEntries   LessonEntry[]
 
   stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
   stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
