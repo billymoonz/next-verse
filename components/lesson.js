@@ -5,6 +5,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
+import { Skeleton } from '@/components/ui/skeleton';
 import { toast } from "@/components/ui/use-toast"
 import { Icons } from '@/components/icons';
 
@@ -13,6 +14,79 @@ import { formatDate } from '@/libs/date';
 import { Player, BigPlayButton, ControlBar, ReplayControl, ForwardControl, VolumeMenuButton } from 'video-react';
 
 import "node_modules/video-react/dist/video-react.css";
+
+export function LessonSkeleton() {
+    return (<div>
+        <Skeleton className="h-10 w-[140px]" />
+        <Skeleton className="mt-[8px] h-6 w-3/4" />
+        <div className="mt-[24px]">
+            <Player />
+        </div>
+        <div className='flex flex-col gap-4 mt-[24px]'>
+            <div className='flex gap-4'>
+                <Skeleton className="h-8 w-[120px]" />
+                <Skeleton className="h-8 w-[120px]" />
+            </div>
+            <div className="flex flex-col gap-4">
+                <div className="border border-1 rounded-lg p-5">
+                    <div className="flex gap-4">
+                        <Skeleton className="h-20 w-[140px] rounded-sm" />
+                        <div style={{ width: 'calc(100% - 148px)' }}>
+                            <Skeleton className="h-5 w-1/2 lg:w-1/4" />
+                            <Skeleton className="mt-[8px] h-8 w-full" />
+                        </div>
+                    </div>
+                </div>
+                <div className="border border-1 rounded-lg p-5">
+                    <div className="flex gap-4">
+                        <Skeleton className="h-20 w-[140px] rounded-sm" />
+                        <div style={{ width: 'calc(100% - 148px)' }}>
+                            <Skeleton className="h-5 w-1/2 lg:w-1/4" />
+                            <Skeleton className="mt-[8px] h-8 w-full" />
+                        </div>
+                    </div>
+                </div>
+                <div className="border border-1 rounded-lg p-5">
+                    <div className="flex gap-4">
+                        <Skeleton className="h-20 w-[140px] rounded-sm" />
+                        <div style={{ width: 'calc(100% - 148px)' }}>
+                            <Skeleton className="h-5 w-1/2 lg:w-1/4" />
+                            <Skeleton className="mt-[8px] h-8 w-full" />
+                        </div>
+                    </div>
+                </div>
+                <div className="border border-1 rounded-lg p-5">
+                    <div className="flex gap-4">
+                        <Skeleton className="h-20 w-[140px] rounded-sm" />
+                        <div style={{ width: 'calc(100% - 148px)' }}>
+                            <Skeleton className="h-5 w-1/2 lg:w-1/4" />
+                            <Skeleton className="mt-[8px] h-8 w-full" />
+                        </div>
+                    </div>
+                </div>
+                <div className="border border-1 rounded-lg p-5">
+                    <div className="flex gap-4">
+                        <Skeleton className="h-20 w-[140px] rounded-sm" />
+                        <div style={{ width: 'calc(100% - 148px)' }}>
+                            <Skeleton className="h-5 w-1/2 lg:w-1/4" />
+                            <Skeleton className="mt-[8px] h-8 w-full" />
+                        </div>
+                    </div>
+                </div>
+                <div className="border border-1 rounded-lg p-5">
+                    <div className="flex gap-4">
+                        <Skeleton className="h-20 w-[140px] rounded-sm" />
+                        <div style={{ width: 'calc(100% - 148px)' }}>
+                            <Skeleton className="h-5 w-1/2 lg:w-1/4" />
+                            <Skeleton className="mt-[8px] h-8 w-full" />
+                            <Skeleton className="mt-[8px] h-4 w-[100px]" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>)
+}
 
 export function VideoPlayer({ data }) {
     return (<div className="mt-[24px]">
