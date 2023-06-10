@@ -23,7 +23,7 @@ function Chapter({ item, index }) {
             <h1 className="font-bold text-lg flex w-full justify-between items-center">#{index + 1} {item.name}</h1>
             <p className="text-muted-foreground text-sm">{item.description}</p>
         </div>
-        <Link className={buttonVariants()} href={`/course/chapter/${item.slug}`}>{item.lessons.length} Lesson(s)</Link>
+        <Link className={buttonVariants()} href={`/course/chapters/${item.slug}`}>{item.lessons.length} Lesson(s)</Link>
     </div>)
 }
 

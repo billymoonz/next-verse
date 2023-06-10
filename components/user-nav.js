@@ -34,7 +34,7 @@ export function UserAccountNav({ user }) {
                 </div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
-                    <Link href="/course/dashboard">Dashboard</Link>
+                    <Link href="/course/chapters">Chapters</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                     <Link href="/course/favorites">Favorites</Link>

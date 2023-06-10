@@ -77,15 +77,15 @@ export function CourseShell({ user, children }) {
             <div className="max-w-[1330px] grid flex-1 gap-12 md:grid-cols-[200px_1fr]">
                 <aside className="hidden w-[200px] flex-col md:flex">
                     <nav className="grid items-start gap-2">
-                        <Link href={'/course/dashboard'}>
+                        <Link href={'/course/chapters'}>
                             <span
                                 className={cn(
                                     "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground",
-                                    path === '/course/dashboard' ? "bg-accent" : "transparent",
+                                    path.includes('/course/chapters') ? "bg-accent" : "transparent",
                                 )}
                             >
                                 <Icons.post className="mr-2 h-4 w-4" />
-                                <span>Dashboard</span>
+                                <span>Chapters</span>
                             </span>
                         </Link>
                         <Link href={'/course/favorites'}>

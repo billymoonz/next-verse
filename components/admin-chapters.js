@@ -91,7 +91,7 @@ function ChapterList({ array }) {
             {array.map((item, index) => {
                 return (<div key={item.id} className="flex flex-col justify-between border border-1 rounded-lg p-5 h-[220px]">
                     <div>
-                        <h1 className="font-bold text-lg flex w-full justify-between items-center">#{index + 1} {item.name}<span><Link href={`/course/chapter/${item.slug}`}><Icons.link className="h-5 w-5" /></Link></span></h1>
+                        <h1 className="font-bold text-lg flex w-full justify-between items-center">#{index + 1} {item.name}<span><Link href={`/course/chapters/${item.slug}`}><Icons.link className="h-5 w-5" /></Link></span></h1>
                         <p className="text-muted-foreground text-sm">{item.description}</p>
                     </div>
                     <ChapterEditor chapter={item} />

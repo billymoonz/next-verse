@@ -24,7 +24,7 @@ export function Chapter({ chapter }) {
 }
 
 function Lesson({ chapter, data, index }) {
-    return (<Link href={`/course/chapter/${chapter.slug}/${data.slug}`} className="border border-1 rounded-lg p-5">
+    return (<Link href={`/course/chapters/${chapter.slug}/${data.slug}`} className="border border-1 rounded-lg p-5">
         <div>
             <div className="flex gap-4">
                 <img alt='thumbnail' src={data.thumbnail} className="h-20 rounded-sm" />

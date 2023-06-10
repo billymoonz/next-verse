@@ -15,7 +15,7 @@ export default async function LoginPage() {
     let user = await getCurrentUser();
 
     if (user) {
-        redirect('/course/dashboard')
+        redirect('/course/chapters')
     }
 
     return (<div className="container flex h-screen w-screen flex-col items-center justify-center">
