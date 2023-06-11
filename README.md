@@ -24,7 +24,7 @@ NextVerse is an open-source learning platform built with Next.js, offering a com
 - [x] Course Lesson Page
 - [x] User Favorites Page
 - [x] Lesson Quiz Builder
-- [ ] Lesson Quiz Section
+- [x] Lesson Quiz Section
 - [ ] User Dashboard
 - [ ] Admin Subscriptions Page
 - [ ] Admin Dashboard
