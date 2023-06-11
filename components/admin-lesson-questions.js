@@ -51,7 +51,10 @@ function Question({ data, index }) {
                 })}
             </ul>
         </div>
-        <QuestionEditor data={data} />
+        <div className="flex gap-4">
+            <QuestionEditor data={data} />
+            <QuestionAnalytics data={data} />
+        </div>
     </div>)
 }
 
@@ -61,6 +64,48 @@ function EmptyQuestions({ data }) {
         <p className="text-muted-foreground text-sm max-w-[90%] text-center">There is currently no questions available for {data.name}.</p>
         <QuestionBuilder lessonId={data.id} />
     </div>)
+}
+
+function QuestionAnalytics({ data }) {
+    return (<Dialog>
+        <DialogTrigger asChild>
+            <Button>Analytics</Button>
+        </DialogTrigger>
+        <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+                <DialogTitle>Question Analytics</DialogTitle>
+                <DialogDescription>
+                    View analytics regarding correct and incorrect answers.
+                </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+                <div className="w-full h-[1px] border-t-1 border border-b-0 border-l-0 border-r-0"></div>
+                <div className="flex items-center justify-between">
+                    <Label>
+                        Question Responses
+                    </Label>
+                    <p className="text-muted-foreground text-xs">{data.responses.length}</p>
+                </div>
+                <div className="flex items-center justify-between">
+                    <Label>
+                        Correct Answers
+                    </Label>
+                    <p className="text-muted-foreground text-xs">{Math.round(data.responses.filter((res) => res.correct).length / data.responses.length * 100)}%</p>
+                </div>
+                <div className="w-full h-[1px] border-t-1 border border-b-0 border-l-0 border-r-0"></div>
+                {data.answers.map((answer, i) => {
+                    return (<div key={answer.id} className="flex flex-col gap-2">
+                        <h1 className="flex items-center">{answer.correct ? <Icons.check className="text-teal-900 mr-2 h-4 w-4" /> : <Icons.close className="text-red-900 mr-2 h-4 w-4" />}{answer.answer}</h1>
+                        <div className="flex items-center justify-between">
+                            <p className="text-xs">{Math.round(answer.responses.length / data.responses.length * 100)}% Answered</p>
+                            <p className="text-xs text-muted-foreground">({answer.responses.length}/{data.responses.length})</p>
+                        </div>
+                    </div>)
+                })}
+                <div className="w-full h-[1px] border-t-1 border border-b-0 border-l-0 border-r-0"></div>
+            </div>
+        </DialogContent>
+    </Dialog>)
 }
 
 function QuestionBuilder({ lessonId }) {
