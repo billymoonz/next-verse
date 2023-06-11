@@ -80,13 +80,13 @@ function QuestionAnalytics({ data }) {
             </DialogHeader>
             <div className="grid gap-4 py-4">
                 <div className="w-full h-[1px] border-t-1 border border-b-0 border-l-0 border-r-0"></div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between px-2">
                     <Label>
                         Question Responses
                     </Label>
                     <p className="text-muted-foreground text-xs">{data.responses.length}</p>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between px-2">
                     <Label>
                         Correct Answers
                     </Label>
@@ -94,7 +94,7 @@ function QuestionAnalytics({ data }) {
                 </div>
                 <div className="w-full h-[1px] border-t-1 border border-b-0 border-l-0 border-r-0"></div>
                 {data.answers.map((answer, i) => {
-                    return (<div key={answer.id} className="flex flex-col gap-2">
+                    return (<div key={answer.id} className="flex flex-col gap-2 px-2">
                         <h1 className="flex items-center">{answer.correct ? <Icons.check className="text-teal-900 mr-2 h-4 w-4" /> : <Icons.close className="text-red-900 mr-2 h-4 w-4" />}{answer.answer}</h1>
                         <div className="flex items-center justify-between">
                             <p className="text-xs">{Math.round(answer.responses.length / data.responses.length * 100)}% Answered</p>
