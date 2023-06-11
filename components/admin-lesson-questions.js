@@ -4,6 +4,8 @@ import React from "react";
 
 import { useRouter } from "next/navigation";
 
+import { Skeleton } from '@/components/ui/skeleton';
+
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -21,6 +23,179 @@ import {
 import { Icons } from "@/components/icons";
 
 import { toast } from "@/components/ui/use-toast"
+
+export function QuestionsSkeleton() {
+    return (<div className="mt-[12px]">
+        <div className="flex gap-2 items-center">
+            <Skeleton className="h-8 w-[120px]" />
+            <Skeleton className="h-4 w-[140px]" />
+        </div>
+        <div className="mt-[24px] grid lg:grid-cols-2 xl:grid-cols-3 gap-4 flow">
+            <div className="flex flex-col justify-between border border-1 rounded-lg p-5 h-[220px]">
+                <div className="flex flex-col gap-4">
+                    <Skeleton className="h-5 w-3/4" />
+                    <div className="flex flex-col gap-2">
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                    </div>
+                </div>
+                <div className="flex gap-2">
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                </div>
+            </div>
+            <div className="flex flex-col justify-between border border-1 rounded-lg p-5 h-[220px]">
+                <div className="flex flex-col gap-4">
+                    <Skeleton className="h-5 w-3/4" />
+                    <div className="flex flex-col gap-2">
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                    </div>
+                </div>
+                <div className="flex gap-2">
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                </div>
+            </div>
+            <div className="flex flex-col justify-between border border-1 rounded-lg p-5 h-[220px]">
+                <div className="flex flex-col gap-4">
+                    <Skeleton className="h-5 w-3/4" />
+                    <div className="flex flex-col gap-2">
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                    </div>
+                </div>
+                <div className="flex gap-2">
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                </div>
+            </div>
+            <div className="flex flex-col justify-between border border-1 rounded-lg p-5 h-[220px]">
+                <div className="flex flex-col gap-4">
+                    <Skeleton className="h-5 w-3/4" />
+                    <div className="flex flex-col gap-2">
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                    </div>
+                </div>
+                <div className="flex gap-2">
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                </div>
+            </div>
+            <div className="flex flex-col justify-between border border-1 rounded-lg p-5 h-[220px]">
+                <div className="flex flex-col gap-4">
+                    <Skeleton className="h-5 w-3/4" />
+                    <div className="flex flex-col gap-2">
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                    </div>
+                </div>
+                <div className="flex gap-2">
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                </div>
+            </div>
+            <div className="flex flex-col justify-between border border-1 rounded-lg p-5 h-[220px]">
+                <div className="flex flex-col gap-4">
+                    <Skeleton className="h-5 w-3/4" />
+                    <div className="flex flex-col gap-2">
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                        <div className="flex">
+                            <Skeleton className="h-4 w-4 mr-2" />
+                            <Skeleton className="h-4 w-1/2" />
+                        </div>
+                    </div>
+                </div>
+                <div className="flex gap-2">
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                    <Skeleton className="mt-[12px] h-8 w-[130px]" />
+                </div>
+            </div>
+        </div>
+    </div>)
+}
 
 export function Questions({ data }) {
     return (<div className="mt-[24px]">

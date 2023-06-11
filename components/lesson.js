@@ -118,7 +118,7 @@ export function Chapter({ data }) {
         <div className='flex flex-col sm:items-center sm:flex-row gap-4'>
             <FavoriteButton favorited={data.lesson.favorited} lessonId={data.lesson.id} />
             {data.lesson.questions && <Quiz data={data.lesson} />}
-            {data.lesson.questions && data.lesson.entry.entered && data.lesson.entry.complete && <p className='text-muted-foreground text-sm'>{Math.round(data.lesson.entry.successRate)}% Success Rate</p>}
+            {data.lesson.questions && data.lesson.entry.entered && data.lesson.entry.complete && <p className='text-muted-foreground text-sm'>Quiz Result • {Math.round(data.lesson.entry.successRate)}%</p>}
         </div>
         {data.chapter.lessons.map((lesson, index) => {
             return (<Lesson
