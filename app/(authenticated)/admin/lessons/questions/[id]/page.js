@@ -19,7 +19,7 @@ export default async function LessonQuestions(props) {
 
     return (<div>
         <h1 className="font-bold text-3xl md:text-4xl">Lesson Questions</h1>
-        <p className="text-lg text-muted-foreground">View & manage course quiz questions.</p>
+        <p className="text-lg text-muted-foreground">View & manage lesson quiz questions.</p>
         <Questions data={data}/>
     </div>)
 }

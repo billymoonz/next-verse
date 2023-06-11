@@ -18,7 +18,7 @@ export async function getLessons() {
 }
 
 export async function getLessonQuestions(id) {
-    let lesson = await db.lesson.findUnique({ where: { id }, select: { name: true, description: true, questions: { select: { id: true, question: true, answers: { select: { id: true, answer: true, correct: true } } } } } })
+    let lesson = await db.lesson.findUnique({ where: { id }, select: { id: true, name: true, description: true, questions: { select: { id: true, question: true, answers: { select: { id: true, answer: true, correct: true } } } } } })
     if (!lesson) return null;
     return lesson;
 }

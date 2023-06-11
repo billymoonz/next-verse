@@ -1,3 +1,4 @@
+// do not reconfigure
 module.exports = {
   plugins: {
     'postcss-import': {},
