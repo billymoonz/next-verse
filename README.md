@@ -8,7 +8,7 @@ NextVerse is an open-source learning platform built with Next.js, offering a com
 - **Admin Panel**: Manage and organize course content efficiently with an intuitive admin panel, providing control over chapters, lessons, quizzes, and subscriptions.
 - **Analytics**: Gain insights into user engagement and course performance through comprehensive analytics, helping you make data-driven decisions.
 - **Chapters and Lessons**: Organize the curriculum into chapters and lessons, ensuring a structured and easy-to-follow learning path.
-- **Video Player**: Offer an immersive video learning experience with a feature-rich video player that supports playback control and provides an uncompromisable viewing experience.
+- **Video Player**: Offer an immersive video learning experience with a feature-rich video player that supports playback control & more.
 - **Lesson Quiz Questions**: Enhance the learning process with interactive lesson quizzes, allowing learners to test their knowledge and reinforce key concepts.
 - **User Progress Bar**: Enable learners to track their progress easily through a visual progress bar, motivating them to complete the course.
 
