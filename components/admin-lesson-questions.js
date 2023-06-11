@@ -44,8 +44,8 @@ function Question({ data, index }) {
         <div>
             <h1 className="font-bold text-lg flex w-full justify-between items-center">#{index + 1} {data.question}</h1>
             <ul>
-                {data.answers.map((a) => {
-                    return (<li className="flex items-center text-muted-foreground">
+                {data.answers.map((a, i) => {
+                    return (<li key={i} className="flex items-center text-muted-foreground">
                         {a.correct ? <Icons.check className="text-teal-900 mr-2 h-4 w-4" /> : <Icons.close className="text-red-900 mr-2 h-4 w-4" />}{a.answer}
                     </li>)
                 })}
@@ -233,7 +233,7 @@ function QuestionEditor({ data }) {
         let response = await fetch(`/api/admin/lesson/question?id=${data.id}`, {
             method: 'DELETE'
         });
-        
+
         if (!response.ok) return toast({
             title: "Something went wrong.",
             description: "Please refresh the page and try again.",

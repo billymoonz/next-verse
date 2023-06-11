@@ -11,7 +11,7 @@
 - [x] Course Chapter Page
 - [x] Course Lesson Page
 - [x] User Favorites Page
-- [ ] Lesson Quiz Builder
+- [x] Lesson Quiz Builder
 - [ ] Lesson Quiz Section
 - [ ] User Dashboard
 - [ ] Admin Subscriptions Page
