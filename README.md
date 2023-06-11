@@ -14,7 +14,7 @@ NextVerse is an open-source learning platform built with Next.js, offering a com
 
 ## Roadmap
 - [x] Open Source
-- [x] Help Pages
+- [ ] Help Pages
 - [x] Authentication W/ GitHub
 - [x] Data Structure
 - [x] User Billing Page
