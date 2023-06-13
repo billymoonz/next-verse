@@ -5,7 +5,7 @@ import { database } from './db';
 
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_KEY || 'undefined');
+const resend = new Resend(process.env.RESEND_KEY || 'null');
 
 const db = database();
 
