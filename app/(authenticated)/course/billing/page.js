@@ -4,7 +4,7 @@ import { redirect } from "next/dist/server/api-utils"
 
 import { stripe } from "@/libs/stripe"
 import { getCurrentUser } from "@/libs/session"
-import { getUserSubscription } from "@/libs/subscription"
+import { getBillingData } from "@/libs/subscription"
 
 export const metadata = {
     title: 'Billing'
@@ -17,7 +17,7 @@ export default async function Billing() {
         redirect(authOptions?.pages?.signIn || "/login")
     }
 
-    const subscriptionPlan = await getUserSubscription(user.id)
+    const subscriptionPlan = await getBillingData(user.id)
 
     let isCanceled = false
     if (subscriptionPlan.isSubscribed && subscriptionPlan.stripeSubscriptionId) {

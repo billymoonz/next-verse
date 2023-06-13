@@ -1,6 +1,7 @@
 import { Lessons } from "@/components/admin-lessons"
 
 import { getLessons } from "@/libs/admin-actions"
+import { redirect } from "next/navigation";
 
 export const metadata = {
     title: {
@@ -9,6 +10,10 @@ export const metadata = {
 }
 export default async function AdminLessons() {
     const data = await getLessons();
+
+    if(!data) {
+        redirect('/admin')
+    }
 
     return (<div>
         <h1 className="font-bold text-3xl md:text-4xl">Lessons</h1>

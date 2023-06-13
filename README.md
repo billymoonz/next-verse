@@ -14,7 +14,6 @@ NextVerse is an open-source learning platform built with Next.js, offering a com
 
 ## Roadmap
 - [x] Open Source
-- [ ] Help Pages
 - [x] Authentication W/ GitHub
 - [x] Data Structure
 - [x] User Billing Page
@@ -26,7 +25,10 @@ NextVerse is an open-source learning platform built with Next.js, offering a com
 - [x] Lesson Quiz Builder
 - [x] Lesson Quiz Section
 - [x] User Course Progress 
-- [ ] Admin Subscriptions Page
+- [x] Admin Subscriptions Page
+- [ ] Help Pages
 - [ ] Admin Dashboard
+- [ ] Nodemailer setup
+- [ ] Export Subscriptions
 
 The roadmap highlights the completed milestones and upcoming features to be implemented. Stay tuned for exciting updates as NextVerse continues to evolve and offer even more functionality for an exceptional learning experience.
