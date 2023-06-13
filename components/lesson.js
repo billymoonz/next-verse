@@ -102,7 +102,7 @@ export function LessonSkeleton() {
 
 export function VideoPlayer({ data }) {
     return (<div className="mt-[24px]">
-        <Player autoPlay poster={data.lesson.thumbnail} src={`https://nz.billymoonz.org/api/lesson-video/${data.lesson.id}`}>
+        <Player autoPlay poster={data.lesson.thumbnail} src={`https://nv.billymoonz.org/api/lesson-video/${data.lesson.id}`}>
             <ControlBar autoHide={true}>
                 <ReplayControl seconds={30} order={2.1} />
                 <ForwardControl seconds={30} order={2.2} />
