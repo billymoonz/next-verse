@@ -28,7 +28,7 @@ export const authOptions = {
                 const verified = user?.emailVerified;
 
                 try {
-                    await resend.sendEmail({
+                    await resend().sendEmail({
                         to: identifier,
                         from: provider.from,
                         subject: verified ? 'Sign In' : 'Activate Account',
@@ -38,6 +38,7 @@ export const authOptions = {
                             `<h1>Welcome to NextVerse!</h1><p>Click <a href="${url}">here</a> to activate account!</p>`
                     });
                 } catch (e) {
+                    console.log(e)
                     throw new Error('Resend failed to send email!')
                 }
             },

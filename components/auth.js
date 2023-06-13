@@ -29,7 +29,7 @@ export function AuthForm({ ...props }) {
         const signInResult = await signIn("email", {
             email: email.toLowerCase(),
             redirect: false,
-            callbackUrl: searchParams?.get("from") || "/course/dashboard",
+            callbackUrl: searchParams?.get("from") || "/course/chapters",
         })
 
         console.log(signInResult)
