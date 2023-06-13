@@ -28,7 +28,7 @@ NextVerse is an open-source learning platform built with Next.js, offering a com
 - [x] Admin Subscriptions Page
 - [ ] Help Pages
 - [ ] Admin Dashboard
-- [ ] Nodemailer setup
+- [x] Resend email setup
 - [ ] Export Subscriptions
 
 The roadmap highlights the completed milestones and upcoming features to be implemented. Stay tuned for exciting updates as NextVerse continues to evolve and offer even more functionality for an exceptional learning experience.
