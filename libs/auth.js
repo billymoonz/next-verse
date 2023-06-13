@@ -1,11 +1,8 @@
 import GithubProvider from "next-auth/providers/github"
 import EmailProvider from "next-auth/providers/email"
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import { database } from './db';
-
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_KEY || 'undefined');
+import { database } from '@/libs/db';
+import { resend } from '@/libs/resend';
 
 const db = database();
 
