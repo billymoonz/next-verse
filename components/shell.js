@@ -47,7 +47,7 @@ export function AdminShell({ user, children }) {
                                 <span>Billing</span>
                             </span>
                         </Link>
-                        <Link href={'/admin'}>
+                        {user.admin && <Link href={'/admin'}>
                             <span
                                 className={cn(
                                     "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground",
@@ -57,7 +57,7 @@ export function AdminShell({ user, children }) {
                                 <Icons.user className="mr-2 h-4 w-4" />
                                 <span>Admin</span>
                             </span>
-                        </Link>
+                        </Link>}
                     </nav>
                 </aside>
                 <main className="flex w-full flex-1 flex-col overflow-hidden">
@@ -110,7 +110,7 @@ export function CourseShell({ user, children }) {
                                 <span>Billing</span>
                             </span>
                         </Link>
-                        <Link href={'/admin'}>
+                        {user.admin && <Link href={'/admin'}>
                             <span
                                 className={cn(
                                     "group flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground",
@@ -120,7 +120,7 @@ export function CourseShell({ user, children }) {
                                 <Icons.user className="mr-2 h-4 w-4" />
                                 <span>Admin</span>
                             </span>
-                        </Link>
+                        </Link>}
                     </nav>
                 </aside>
                 <main className="flex w-full flex-1 flex-col overflow-hidden">

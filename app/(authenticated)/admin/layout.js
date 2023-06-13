@@ -12,7 +12,7 @@ export default async function AdminLayout({ children }) {
     }
 
     if(!user?.admin) {
-        redirect('/course/dashboard');
+        redirect('/course/chapters');
     }
 
     return (<AdminShell user={user}>
