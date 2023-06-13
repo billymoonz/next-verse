@@ -10,7 +10,7 @@ export function Chapters({ chapters, successRate }) {
     return (<div className="mt-[12px]">
         <div className="flex gap-2 items-center">
             <Progress value={successRate} />
-            <p className="text-xs whitespace-nowrap">{Math.round(successRate)}% Complete</p>
+            <p className="text-xs whitespace-nowrap">{Math.round(successRate).toString().replace('NaN', '0')}% Complete</p>
         </div>
         <div className="mt-[24px] grid lg:grid-cols-2 xl:grid-cols-3 gap-4 flow">
             {chapters.map((chapter, index) => {

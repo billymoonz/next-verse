@@ -1,7 +1,11 @@
 import GithubProvider from "next-auth/providers/github"
-import {PrismaAdapter} from "@auth/prisma-adapter";
-
+import EmailProvider from "next-auth/providers/email"
+import { PrismaAdapter } from "@auth/prisma-adapter";
 import { database } from './db';
+
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_KEY);
 
 const db = database();
 
@@ -11,6 +15,35 @@ export const authOptions = {
         GithubProvider({
             clientId: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_SECRET,
+        }),
+        EmailProvider({
+            from: 'noreply@billymoonz.org',
+            sendVerificationRequest: async ({ identifier, url, provider }) => {
+                const user = await db.user.findUnique({
+                    where: {
+                        email: identifier,
+                    },
+                    select: {
+                        emailVerified: true,
+                    },
+                })
+
+                const verified = user?.emailVerified;
+
+                try {
+                    await resend.sendEmail({
+                        to: identifier,
+                        from: provider.from,
+                        subject: verified ? 'Sign In' : 'Activate Account',
+                        html: verified ?
+                            `<h1>Welcome back!</h1><p>Click <a href="${url}">here</a> to sign in!</p>`
+                            :
+                            `<h1>Welcome to NextVerse!</h1><p>Click <a href="${url}">here</a> to activate account!</p>`
+                    });
+                } catch (e) {
+                    throw new Error('Resend failed to send email!')
+                }
+            },
         }),
     ],
     pages: {

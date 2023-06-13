@@ -10,7 +10,9 @@ const nextConfig = {
 
         STRIPE_API_KEY: process.env.STRIPE_API_KEY,
         STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
-        STRIPE_MONTHLY_PLAN_ID: process.env.STRIPE_MONTHLY_PLAN_ID
+        STRIPE_MONTHLY_PLAN_ID: process.env.STRIPE_MONTHLY_PLAN_ID,
+
+        RESNED_KEY: process.env.RESEND_KEY
     },
     experimental: {
         serverActions: true

@@ -18,7 +18,7 @@ export function Chapter({ chapter }) {
         </div>}
         {chapter.lessons.length >= 1 && <div className="flex gap-2 items-center mt-[12px]">
             <Progress value={Math.round(chapter.successRate)} />
-            <p className="text-xs whitespace-nowrap">{Math.round(chapter.successRate)}% Complete</p>
+            <p className="text-xs whitespace-nowrap">{Math.round(chapter.successRate).toString().replace('NaN', '0')}% Complete</p>
         </div>}
         {chapter.lessons.length >= 1 && <div className="flex flex-col gap-4 mt-[24px]">
             {chapter.lessons.map((lesson, index) => {
@@ -46,7 +46,7 @@ function Lesson({ chapter, data, index }) {
             </div>
             {data.questions && data.entry.entered && data.entry.complete && <div className="flex gap-2 items-center">
                 <Progress value={Math.round(data.entry.successRate)} />
-                <p className="text-xs whitespace-nowrap">{Math.round(data.entry.successRate)}% Complete</p>
+                <p className="text-xs whitespace-nowrap">{Math.round(data.entry.successRate).toString().replace('NaN', '0')}% Complete</p>
             </div>}
         </div>
     </Link>)
