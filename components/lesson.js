@@ -23,16 +23,12 @@ import {
 
 import { formatDate } from '@/libs/date';
 
-import { Player, BigPlayButton, ControlBar, ReplayControl, ForwardControl, VolumeMenuButton } from 'video-react';
-
-import "node_modules/video-react/dist/video-react.css";
-
 export function LessonSkeleton() {
     return (<div>
         <Skeleton className="h-10 w-[140px]" />
         <Skeleton className="mt-[8px] h-6 w-3/4" />
         <div className="mt-[24px]">
-            <Player />
+            {/* Skeleton for video player */}
         </div>
         <div className='flex flex-col gap-4 mt-[24px]'>
             <div className='flex gap-4'>
@@ -97,19 +93,6 @@ export function LessonSkeleton() {
                 </div>
             </div>
         </div>
-    </div>)
-}
-
-export function VideoPlayer({ data }) {
-    return (<div className="mt-[24px]">
-        <Player autoPlay poster={data.lesson.thumbnail} src={`https://nv.billymoonz.org/api/lesson-video/${data.lesson.id}`}>
-            <ControlBar autoHide={true}>
-                <ReplayControl seconds={30} order={2.1} />
-                <ForwardControl seconds={30} order={2.2} />
-                <VolumeMenuButton order={3} />
-            </ControlBar>
-            <BigPlayButton position='center' />
-        </Player>
     </div>)
 }
 

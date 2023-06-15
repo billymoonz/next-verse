@@ -2,7 +2,8 @@ import { redirect } from "next/navigation";
 
 import { getLessonData } from "@/libs/course-actions";
 
-import { Chapter, VideoPlayer } from "@/components/lesson";
+import { Chapter } from "@/components/lesson";
+import { VideoPlayer } from "@/components/video-player";
 
 export async function generateMetadata({ params }) {
     const { slug, lesson } = params;
@@ -25,7 +26,7 @@ export default async function LessonPage(props) {
     return (<div>
         <h1 className="font-bold text-3xl md:text-4xl">{data.lesson.name}</h1>
         <p className="text-lg text-muted-foreground">{data.lesson.description}</p>
-        <VideoPlayer data={data} />
+        <VideoPlayer url={data.lesson.url} thumbnail={data.lesson.thumbnail} />
         <Chapter data={data} />
     </div>)
 }

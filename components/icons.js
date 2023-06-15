@@ -26,10 +26,14 @@ import {
     ArrowUp,
     Wrench,
     VolumeX,
-    Volume2
+    Volume2,
+    Undo,
+    Redo
 } from "lucide-react"
 
 export const Icons = {
+    undo: Undo,
+    redo: Redo,
     volume: Volume2,
     muted: VolumeX,
     tools: Wrench,

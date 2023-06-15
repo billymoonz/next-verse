@@ -94,6 +94,7 @@ export async function getLessonData(slug, lessonSlug) {
     if (!chapter) return null;
     if (chapter.lessons.filter((les) => les.slug == lessonSlug).length === 0) return null;
     let lesson = chapter.lessons.find((les) => les.slug === lessonSlug);
+    lesson.url = process.env.NEXTAUTH_URL + '/api/lesson-video/' + lesson.id
     return {
         chapter,
         lesson
