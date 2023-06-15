@@ -276,7 +276,7 @@ function Lesson({ chapter, data, index }) {
                 <div>
                     <h1 className="font-bold text-lg flex w-full justify-between items-center">#{index + 1} {data.name}</h1>
                     <p className="text-muted-foreground text-sm">{data.description}</p>
-                    <p className="text-muted-foreground text-xs">{formatDate(data.updatedAt, '%B%e, %Y')}</p>
+                    <p className="text-muted-foreground text-xs">{formatDate(data.updatedAt, '%B %e, %Y')}</p>
                 </div>
             </div>
         </div>
