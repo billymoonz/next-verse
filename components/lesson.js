@@ -28,7 +28,9 @@ export function LessonSkeleton() {
         <Skeleton className="h-10 w-[140px]" />
         <Skeleton className="mt-[8px] h-6 w-3/4" />
         <div className="mt-[24px]">
-            {/* Skeleton for video player */}
+            <video poster={null} controls controlsList='nodownload'>
+                <source src=''></source>
+            </video>
         </div>
         <div className='flex flex-col gap-4 mt-[24px]'>
             <div className='flex gap-4'>
